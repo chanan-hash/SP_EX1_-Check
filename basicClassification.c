@@ -6,7 +6,6 @@
  * We can't use 'math.h' library so we'll use our own function
  */
 
-
 // Will helps us for isStrong number function
 int factorial(int n)
 {
@@ -17,7 +16,6 @@ int factorial(int n)
     }
     return fact;
 }
-
 
 // We wiil run eith a loop till the sqrt or n/2 of the number and check if it dividing by it
 // false = 0, true = 1
@@ -53,20 +51,21 @@ int isStrong(int num)
 {
     int sum = 0; // keeping the sum of the digits
     int temp = num;
-    while (temp != 0)
+    while (temp > 0)
     {
         int dig = temp % 10; // getting the last digit number
         sum += factorial(dig);
         temp /= 10; // Dividing it by 10 each iteration
     }
-    // if (sum == num)
-    // {
-    //     return 1;
-    // }
-    // else
-    // {
-    //     return 0;
-    return (sum == num);
+    if (sum == num)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+        // return (sum == num);
+    }
 }
 
 // Using math.h library
